@@ -9,6 +9,7 @@ Desarrollo Orientado a Objetos I
  - Sección: I_002A
  - Carrera: Analista programador computacional
  - Sede: En Linea
+   
 
  - Descripción General
    
