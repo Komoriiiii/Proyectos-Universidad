@@ -5,12 +5,13 @@ Desarrollo Orientado a Objetos I
 
  - Autor del proyecto
 
-Nombre completo: Gustavo Adolfo Gana Luna	
-Sección: I_002A
-Carrera: Analista programador computacional
-Sede: En Linea
+ - Nombre completo: Gustavo Adolfo Gana Luna	
+ - Sección: I_002A
+ - Carrera: Analista programador computacional
+ - Sede: En Linea
 
  - Descripción General
+   
 Sistema basico desarrollado en Java para la empresa salmonera Salmontt, que permite organizar y gestionar la información de las personas vinculadas a la organizacion mediante un modelo orientado a objetos.
 
 ------------------------------------------------------------------------------------------------------------
