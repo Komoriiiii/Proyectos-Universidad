@@ -1,4 +1,4 @@
-====================================================================================================================================================================================================================
+===================================================================
 
 Duoc UC
 Desarrollo Orientado a Objetos I
@@ -12,14 +12,6 @@ Sede: En Linea
 
  - Descripción General
 Sistema basico desarrollado en Java para la empresa salmonera Salmontt, que permite organizar y gestionar la información de las personas vinculadas a la organizacion mediante un modelo orientado a objetos.
-
-├── src/
-│   ├── model/
-│   │   ├── Direccion.java
-│   │   ├── Persona.java
-│   │   └── Empleado.java
-│   └── app/
-│       └── Main.java
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -73,5 +65,5 @@ git clone https://github.com/Komoriiiii/Proyectos-Universidad/tree/Desarrollo-Or
 Repositorio GitHub: https://github.com/Komoriiiii/Proyectos-Universidad/tree/Desarrollo-Orientado-a-Objetos 
 Fecha de entrega: [10/11/2025]
 
-====================================================================================================================================================================================================================
+===================================================================
 
