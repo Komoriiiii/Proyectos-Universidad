@@ -1,0 +1,7 @@
+Isla Huar;Calbuco;1200
+Punta Redonda;Puerto Montt;950
+Bahía Llancahue;Quellon;1850
+Estero Cailin;Castro;1420
+Islote Conejos;Calbuco;780
+Seno Reloncavi;Cochamo;2100
+Canal Desertores;Chaiten;1050
