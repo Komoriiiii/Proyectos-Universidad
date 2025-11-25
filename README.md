@@ -70,22 +70,6 @@ Almacena archivos de datos externos
 
 centros_cultivo.txt: Base de datos en texto plano
 
-
-📁 Estructura Completa del Proyecto
-SalmonttApp/
-├── src/
-│   ├── model/
-│   │   └── CentroCultivo.java          [Entidad del dominio]
-│   ├── service/
-│   │   └── GestorCentros.java          [Lógica de negocio]
-│   ├── util/                            [📚 LIBRERÍA PERSONALIZADA]
-│   │   ├── ValidadorDatos.java         [Validaciones]
-│   │   └── FormateadorSalida.java      [Formateo de salida]
-│   └── app/
-│       └── Main.java                   [Interfaz de usuario]
-└── resources/
-    └── centros_cultivo.txt             [Datos externos]
-
 Clases Implementadas 
 
 Clase CentroCultivo
