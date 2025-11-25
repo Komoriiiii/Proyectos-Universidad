@@ -1,77 +1,203 @@
-Sistema de Gestión Salmontt
 Duoc UC - Desarrollo Orientado a Objetos I
+Evaluación Sumativa 2 - Semana 5
 
-Autor del proyecto
+  Autor del proyecto
 
 Nombre completo: Gustavo Adolfo Gana Luna
 Sección: I_002A
 Carrera: Analista Programador Computacional
 Sede: En Línea
+Fecha de entrega: 24/11/2025
 
 
-Descripción General
-Sistema básico desarrollado en Java para la empresa salmonera Salmontt, con sede en Puerto Montt. Este sistema permite cargar, organizar y gestionar la información de los centros de cultivo mediante la lectura de datos desde archivos externos, aplicando operaciones de recorrido, búsqueda y filtrado sobre colecciones dinámicas (ArrayList).
-El proyecto implementa un modelo orientado a objetos que vincula archivos externos con instancias de clases, fortaleciendo la manipulación de estructuras de datos y la gestión de información del negocio.
 
-Paquetes:
+El sistema permite gestionar información de centros de cultivo mediante un modelo orientado a objetos, solucionando los problemas de duplicación de datos, acceso a información y automatización de procesos manuales.
 
+ Novedades de la Versión 2.0
+ Mejoras Implementadas
+
+Validaciones y Manejo de Errores:
+
+- Validación de datos con try-catch en todas las operaciones críticas
+- Clase ValidadorDatos para validaciones centralizadas
+- Mensajes de error descriptivos y manejo robusto de excepciones
+- Contador de errores en carga de archivos
+
+Nuevas Funcionalidades:
+
+- Menú interactivo con 10 opciones de consulta
+- Búsqueda por nombre (exacta y parcial)
+- Filtros múltiples (producción, comuna, estado)
+- Ranking de centros por producción
+- Estadísticas generales del sistema
+- Agrupación de centros por comuna
+- Agregar nuevos centros desde consola
+- Vista detallada de cada centro
+
+Mejoras de Arquitectura:
+
+- Reorganización en paquetes funcionales (model, service, util, app)
+- Uso de Streams y expresiones lambda
+- Clase FormateadorSalida para presentación profesional
+- Separación clara de responsabilidades
+- Código más mantenible y escalable
+
+
+Estructura de Paquetes
 Paquete model
-Contiene las clases del dominio que representan las entidades del negocio salmonero.
-Paquete data
-Contiene la clase encargada de gestionar la lectura de archivos y operaciones sobre las colecciones de datos.
-Paquete ui
-Contiene la clase principal para ejecutar el sistema y mostrar los resultados.
-Carpeta resources
-Almacena los archivos de datos externos (.txt) utilizados por el sistema.
+Contiene las clases del dominio
 
-Clases Implementadas
+CentroCultivo.java: Entidad principal del negocio con atributos validados
+
+Paquete service
+Contiene la lógica de negocio
+
+GestorCentros.java: CRUD, búsquedas, filtros y estadísticas
+
+Paquete util
+Contiene utilidades reutilizables (Librería personalizada)
+
+ValidadorDatos.java: Validaciones centralizadas
+FormateadorSalida.java: Formateo profesional de consola
+
+Paquete app
+Contiene la interfaz de usuario
+
+Main.java: Menú interactivo y punto de entrada
+
+Carpeta resources
+Almacena archivos de datos externos
+
+centros_cultivo.txt: Base de datos en texto plano
+
+
+📁 Estructura Completa del Proyecto
+SalmonttApp/
+├── src/
+│   ├── model/
+│   │   └── CentroCultivo.java          [Entidad del dominio]
+│   ├── service/
+│   │   └── GestorCentros.java          [Lógica de negocio]
+│   ├── util/                            [📚 LIBRERÍA PERSONALIZADA]
+│   │   ├── ValidadorDatos.java         [Validaciones]
+│   │   └── FormateadorSalida.java      [Formateo de salida]
+│   └── app/
+│       └── Main.java                   [Interfaz de usuario]
+└── resources/
+    └── centros_cultivo.txt             [Datos externos]
+
+Clases Implementadas 
+
 Clase CentroCultivo
 
 Ubicación: model.CentroCultivo
-Propósito: Representa un centro de cultivo de salmón con sus características principales.
+Propósito: Representa un centro de cultivo de salmón
 Atributos:
 
 nombre (String): Nombre del centro de cultivo
-comuna (String): Ubicación geográfica del centro
-toneladasProducidas (double): Producción anual en toneladas
+comuna (String): Ubicación geográfica
+toneladasProducidas (double): Producción anual
+estado (String): Estado operacional (Activo/Inactivo/En Mantenimiento)
+empleados (int): Cantidad de empleados
 
 
-Métodos: Getters, Setters, Constructores y toString()
+Características:
+ 
+- Todos los atributos son private
+- Getters y setters con validaciones
+- 3 constructores (vacío, básico, completo)
+- Método toString() personalizado
+- Métodos equals() y hashCode() implementados
+- Métodos de negocio: esAltaProduccion(), getCategoria(), getProduccionPorEmpleado()
 
-Clase GestorDatos
 
-Ubicación: data.GestorDatos
-Propósito: Gestiona la lectura de datos desde archivos y operaciones sobre la colección de centros de cultivo.
+
+Clase GestorCentros
+
+Ubicación: service.GestorCentros
+Propósito: Gestiona todas las operaciones sobre la colección de centros
+Funcionalidades principales:
+
+cargarDatos(String ruta): Lee archivo y carga datos con validación
+agregarCentro(CentroCultivo): Agrega nuevo centro con validación
+buscarPorNombre(String): Búsqueda exacta
+buscarPorNombreParcial(String): Búsqueda parcial
+filtrarPorProduccion(double): Filtra por toneladas mínimas
+filtrarPorComuna(String): Filtra por ubicación
+filtrarPorEstado(String): Filtra por estado operacional
+obtenerCentroMayorProduccion(): Encuentra el más productivo
+obtenerCentroMenorProduccion(): Encuentra el menos productivo
+calcularPromedioProduccion(): Estadística de promedio
+calcularProduccionTotal(): Suma total de producción
+ordenarPorProduccion(): Ranking descendente
+obtenerComunasUnicas(): Lista de comunas sin duplicados
+
+
+Características:
+
+Manejo robusto de excepciones con try-catch
+Uso de ArrayList<CentroCultivo> como colección
+Validación línea por línea al cargar archivo
+Uso de Streams para operaciones funcionales
+Contador de errores durante carga
+
+
+
+Clase ValidadorDatos (Librería)
+
+Ubicación: util.ValidadorDatos
+Propósito: Centraliza todas las validaciones del sistema
+Métodos estáticos:
+
+validarTextoNoVacio(String): Verifica texto no nulo ni vacío
+validarNumeroPositivo(double): Verifica número > 0
+validarNumeroNoNegativo(double): Verifica número >= 0
+validarRango(int, int, int): Verifica valor en rango
+validarFormatoToneladas(String): Valida conversión a double
+validarEstado(String): Verifica estado permitido
+validarFormatoLinea(String, int): Valida formato de archivo
+normalizarTexto(String): Limpia y normaliza texto
+
+
+Características:
+
+Clase utilitaria reutilizable
+Todos los métodos son static
+Sin dependencias externas
+
+
+
+  Clase FormateadorSalida (Libreria)
+
+Ubicación: util.FormateadorSalida
+Propósito: Estandariza la presentación en consola
+Métodos estáticos:
+
+imprimirEncabezado(String): Encabezados principales
+imprimirSubtitulo(String): Subtítulos con lineas
+imprimirCentroFormato(CentroCultivo, int): Formato tabla
+imprimirEncabezadoTabla(): Encabezado de columnas
+imprimirExito(String): Mensajes de exito
+imprimirError(String): Mensajes de error
+imprimirAdvertencia(String): Advertencias 
+imprimirDetalleCompleto(CentroCultivo): Vista detallada con bordes
+imprimirEstadisticas(...): Resumen estadístico
+
+  Clase Main
+
+Ubicación: app.Main
+Propósito: Interfaz de usuario y control del flujo del programa
 Funcionalidades:
 
-cargarDatos(String rutaArchivo): Lee el archivo .txt y crea objetos CentroCultivo
-getCentros(): Retorna la lista completa de centros
-filtrarPorProduccion(double toneladas): Filtra centros con producción mayor al valor indicado
-obtenerCentroMayorProduccion(): Identifica el centro más productivo
-filtrarPorComuna(String comuna): Filtra centros por ubicación geográfica
+Menú interactivo con 10 opciones
+Validación de entrada del usuario
+Llamadas a métodos de GestorCentros
+Presentación de resultados con FormateadorSalida
 
 
+  Características:
 
-Clase Main
-
-Ubicación: ui.Main
-Propósito: Clase principal para ejecutar y probar el sistema completo.
-Operaciones implementadas:
-
-Recorrido completo de todos los centros de cultivo
-Filtrado de centros con producción mayor a 1000 toneladas
-Identificación del centro de mayor producción
-Filtrado de centros por comuna específica
-
-Repositorio GitHub
-https://github.com/Komoriiiii/Proyectos-Universidad/tree/salmontt-colecciones
-
-Información Adicional
-
-Fecha de entrega: 17/11/2025
-Actividad: Construyendo una lista de objetos desde archivo
-
-Desarrollado por
-Gustavo Adolfo Gana Luna
-Analista Programador Computacional
-Duoc UC - Sede En Línea
+- Manejo completo de excepciones
+- Navegación intuitiva
+- Mensajes claros al usuario
+- Banner de bienvenida profesional
