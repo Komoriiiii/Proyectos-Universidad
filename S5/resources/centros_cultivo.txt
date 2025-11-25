@@ -1,9 +1,0 @@
-Isla Huar;Calbuco;1200;Activo;45
-Punta Redonda;Puerto Montt;950;Activo;32
-Bahía Llancahue;Quellon;1850;Activo;67
-Estero Cailin;Castro;1420;En Mantenimiento;52
-Islote Conejos;Calbuco;780;Activo;28
-Seno Reloncavi;Cochamo;2100;Activo;78
-Canal Desertores;Chaiten;1050;Activo;38
-Isla Tenglo;Puerto Montt;890;Inactivo;0
-Isla Puluqui;Calbuco;1100;En Mantenimiento;42
