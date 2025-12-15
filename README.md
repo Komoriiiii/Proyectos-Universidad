@@ -120,3 +120,10 @@ Uso de `ArrayList<Registrable>` para gestionar múltiples tipos de objetos de fo
 
 ### Encapsulamiento
 Todos los atributos son privados con acceso mediante métodos getters públicos.
+
+
+## 📅 Información de Entrega
+
+* **Fecha de entrega:** 15/12/2025
+* **Asignatura:** Desarrollo Orientado a Objetos I
+* **Institución:** Duoc UC
