@@ -10,7 +10,7 @@ Sede: En Línea
 
 <div>
 
-Descripción General
+Descripción General <div>
 Sistema de gestión desarrollado en Java para la empresa salmonera Salmontt, ubicada en Puerto Montt, que permite administrar y organizar información de múltiples entidades operativas mediante programación orientada a objetos. El sistema implementa herencia, interfaces, polimorfismo, composición, colecciones genéricas y manejo de excepciones personalizadas para facilitar la gestión de empleados, clientes, proveedores, productos y órdenes de compra.
 
 <div>
